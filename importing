@@ -35,8 +35,3 @@ acoes_df.dropna(inplace=True)
 
 #salvando
 acoes_df.to_csv('acoesmulti.csv')
-
-
-
-
-

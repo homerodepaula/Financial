@@ -24,3 +24,9 @@ desvio_padrao_cvc = math.sqrt(variancia_cvc)
 coeficiente_variacao_cvc = (desvio_padrao_cvc / media_cvc) * 100
 #ou
 stats.variation(taxas_cvc) * 100
+
+#Risco medio anual
+dataset = pd.read_csv('usr/bin/finpython/data/acoesmulti.csv')
+dataset.drop(labels = ['Date'], axis = 1, inplace = True)
+taxas_retorno = (dataset / dataset.shift(1)) -1
+taxas_retorno.std() * math.sqrt(246)                          #anualizando

@@ -34,20 +34,3 @@ figura = px.line(title = 'Histórico do preço das ações')
 for i in acoes_df_columns[1:]:
   figura.add_scatter(x = acoes_df['Date'], y = acoes_df[i], name = i)
 figura.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

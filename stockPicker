@@ -30,7 +30,7 @@ def alocacao_ativos(dataset, dinheiro_total, seed = 0):
 	datas = dataset['Datas']
 	dataset.drop(labels = ['Date'], axis = 1, inplace = True)
 	dataset['taxa de retorno'] = 0.0
-	for i in range(1, len(dataset)):
+	for i in range(1, len(dataset)): 				#populando
 		dataset['taxa retorno'][i] = ((dataset['Valor Capital'][i] / dataset['Valor Capital'][i - 1]) - 1) * 100
 	
 	acoes_pesos = pd.DataFrame(data = {'Ações': colunas, 'Pesos: pesos *100})

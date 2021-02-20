@@ -11,7 +11,7 @@ import plotly.express as px
 dataset = pd.read_csv('usr/bin/finpython/data/acoesmulti.csv')
 
 def alocacao_ativos(dataset, dinheiro_total, seed = 0):
-	dataset = dataset.copy()
+  dataset = dataset.copy()
 	if seed != 0:
 		np.random.seed(seed)
 	pesos = np.random.random(len(dataset.columns) - 1)

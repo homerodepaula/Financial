@@ -2,9 +2,14 @@
 #importação basica +
 
 import sys
-def alocacao_portfolio(dataset, dinheiro_total, repeticoes):  	 #repeticoes quantos portfolios vao ser testados
+def alocacao_portfolio(dataset, dinheiro_total, sem_risco, repeticoes):  	 #repeticoes quantos portfolios vao ser testados
 	dataset = dataset.copy()
 	dataset_original = dataset.copy()
+	
+	lista_retorno_esperado = []
+	lista_volatilidade_esperada = []					#usado na visualizaçao grafica
+	lista_sharpe_ratio = []
+	
 	melhor_sharpe_ratio = 1 - sys.maxsize	
 	melhores_pesos = np.empty
 

@@ -2,7 +2,7 @@
 #importação basica +
 
 import sys
-def alocacao_portfolio(dataset, dinheiro_total, seed = 0, repeticoes):  	 #repeticoes quantos portfolios vao ser testados
+def alocacao_portfolio(dataset, dinheiro_total, repeticoes):  	 #repeticoes quantos portfolios vao ser testados
 	dataset = dataset.copy()
 	dataset_original = dataset.copy()
 	melhor_sharpe_ratio = 1 - sys.maxsize	

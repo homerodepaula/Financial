@@ -45,13 +45,3 @@ def alocacao_portfolio(dataset, dinheiro_total, seed = 0, repeticoes):  	 #repet
 
 #testando
 sharpe_ratio, melhores_pesos = alocacao_portfolio(pd.read_csv('usr/bin/finpython/data/acoesmulti.csv'), 5000, taxa_selic_historico.mean() / 100, 100)
-
-
-
-
-
-
-
-
-
-

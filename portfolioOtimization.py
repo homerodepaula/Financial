@@ -12,7 +12,8 @@ def alocacao_portfolio(dataset, dinheiro_total, sem_risco, repeticoes):  	 #repe
 	
 	melhor_sharpe_ratio = 1 - sys.maxsize	
 	melhores_pesos = np.empty
-
+	melhor_volatilidade = 0
+	melhore_retorno = 0
 
 	for _ in range(repeticoes):						#executa a quantidade de vezes de repeticoes
 		pesos = np.random.random(len(dataset.columns) -1)
@@ -43,10 +44,15 @@ def alocacao_portfolio(dataset, dinheiro_total, sem_risco, repeticoes):  	 #repe
 		if sharpe_ratio > melhor_sharpe_ratio:
 			melhor_sharpe_ratio = sharpe_ratio
 			melhores_pesos = pesos
-
+			melhor_volatilidade = volatilidade_esperada
+			melhor_retorno = retorno_esperado
+		lista_retorn_esperado.append(retorno_esperado)
+		lista_volatilidade_esperada.append(volatilidade_esperada)
+		lista_sharpe_ratio.append(sharpe_ratio)
+		
 		dataset = dataset_original.copy()
 
-	return melhor_sharpe_ratio, melhores_pesos
+	return melhor_sharpe_ratio, melhores_pesos, lista_retorno_esperado, lista_volatilidade_esperada, lista_sharpe_ratio, melhor_volatilidade, melhor retorno
 
 #testando
 sharpe_ratio, melhores_pesos = alocacao_portfolio(pd.read_csv('usr/bin/finpython/data/acoesmulti.csv'), 5000, taxa_selic_historico.mean() / 100, 100)

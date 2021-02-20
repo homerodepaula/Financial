@@ -10,14 +10,16 @@ import plotly.express as px
 
 dataset = pd.read_csv('usr/bin/finpython/data/acoesmulti.csv')
 
-def alocacao_ativos(dataset, dinheiro_total, seed = 0):
+def alocacao_ativos(dataset, dinheiro_total, seed = 0, melhores_pesos = []):
   	dataset = dataset.copy()
 	if seed != 0:
 		np.random.seed(seed)
-	pesos = np.random.random(len(dataset.columns) - 1)
-	pesos = pesos / pesos.sum()				#normalizando
-	alocacao_ativos(pd.read_csv('usr/bin/finpython/data/acoesmulti.csv'), 5000)
-
+	if len(melhores_pesos) > 0:
+		pesos = melhores_pesos
+	else:
+		pesos = np.random.random(len(dataset.columns) - 1)
+		pesos = pesos / pesos.sum()				#normalizando
+	
 #normalizando ds e dropando data
 	colunas = dataset.columns[1:] 
 	for i in colunas:

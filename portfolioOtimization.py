@@ -52,7 +52,7 @@ def alocacao_portfolio(dataset, dinheiro_total, sem_risco, repeticoes):  	 #repe
 		
 		dataset = dataset_original.copy()
 
-	return melhor_sharpe_ratio, melhores_pesos, lista_retorno_esperado, lista_volatilidade_esperada, lista_sharpe_ratio, melhor_volatilidade, melhor_retorno
+	return melhor_sharpe_ratio, melhores_pesos, lista_retorno_esperado, lista_volatilidade_esperada, lista_sharpe_ratio, melhor_retorno, melhor_volatilidade
 
 #testando
 sharpe_ratio, melhores_pesos = alocacao_portfolio(pd.read_csv('usr/bin/finpython/data/acoesmulti.csv'), 5000, taxa_selic_historico.mean() / 100, 100)

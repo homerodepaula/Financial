@@ -26,7 +26,4 @@ def fitness_function(solucao):
 
 np.random.seed(10)
 pesos = np.random.random(len(dataset_original.columns) - 1)
-pesos = pesos / pesos.sum()
-
-
-	
+pesos = pesos / pesos.sum()	

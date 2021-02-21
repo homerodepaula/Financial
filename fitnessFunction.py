@@ -27,3 +27,8 @@ def fitness_function(solucao):
 np.random.seed(10)
 pesos = np.random.random(len(dataset_original.columns) - 1)
 pesos = pesos / pesos.sum()	
+
+#terminando de preparar o ambiente:
+fitness = mlrose.CustomFitness(fitness_function)
+problema_maximizacao = mlrose.ContinuousOpt(length=6, fitness_fn=fitness, maximize = True, min_val = 0, max_val = 1)
+problema_minimizacao = mlrose.ContinuousOpt(length=6, fitness_fn=fitness, maximize = False, min_val = 0, max_val = 1)
